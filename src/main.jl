@@ -1,3 +1,97 @@
+"""
+Documentation du Fichier main.jl
+Description
+main.jl est le point d'entrée principal du projet SOTRACO (Simulateur de Transport). 
+Ce fichier orchestre l'exécution complète du système d'analyse et d'optimisation des transports en commun.
+
+Structure du Fichier
+1. Importations et Inclusions
+
+using DataFrames, CSV, Dates, Statistics, Plots, Printf
+include("types.jl")
+include("io_operations.jl")
+include("optimisation.jl")
+include("analyse.jl")
+include("visualisation.jl")
+include("rapports.jl")
+using .IOOperations: charger_lignes_bus, charger_arrets, charger_frequentation, sauvegarder_recommandations
+using .Optimisation: optimiser_frequences, calculer_temps_attente, evaluer_impact_optimisation
+using .Analyse: analyser_frequentation, identifier_lignes_critiques, analyser_heures_pointe
+using .Visualisation: creer_visualisations, plot_occupation_par_ligne, plot_frequentation_horaire
+using .Rapports: generer_rapport_complet, generer_rapport_ligne
+2. Fonction Principale main()
+La fonction principale qui coordonne l'ensemble du processus d'analyse.
+
+Flux d'exécution :
+Chargement des données depuis les fichiers CSV
+
+Diagnostic des types de données pour vérifier l'intégrité
+
+Analyse de la fréquentation des bus
+
+Identification des lignes critiques nécessitant une optimisation urgente
+
+Optimisation des fréquences de passage
+
+Génération de rapports détaillés
+
+Création de visualisations graphiques
+
+Sauvegarde des recommandations d'optimisation
+
+3. Gestion des Erreurs
+Le code inclut un bloc try-catch robuste pour :
+
+Gérer les erreurs de chargement des fichiers
+
+Fournir des messages d'erreur explicites
+
+Guider l'utilisateur sur la structure attendue des fichiers
+
+4. Exécution Conditionnelle
+
+if abspath(PROGRAM_FILE) == @__FILE__
+    main()
+end
+Cette condition assure que la fonction main() ne s'exécute que lorsque le fichier est lancé directement (et non lorsqu'il est importé comme module).
+
+Fonctionnalités Principales
+Chargement des Données
+charger_lignes_bus() : Charge les informations sur les lignes de bus
+
+charger_arrets() : Charge la liste des arrêts
+
+charger_frequentation() : Charge les données de fréquentation
+
+Analyse
+analyser_frequentation() : Analyse statistique de la fréquentation
+
+identifier_lignes_critiques() : Identifie les lignes surchargées
+
+Optimisation
+optimiser_frequences() : Calcule les fréquences optimales
+
+sauvegarder_recommandations() : Sauvegarde les résultats
+
+Visualisation et Reporting
+creer_visualisations() : Génère les graphiques
+
+generer_rapport_complet() : Produit le rapport détaillé
+
+Fichiers de Données Requis
+data/lignes_bus.csv : Informations sur les lignes de bus
+
+data/arrets.csv : Liste des arrêts avec leurs coordonnées
+
+data/frequentation.csv : Données historiques de fréquentation
+
+Sorties Générées
+Rapports textuels dans le dossier rapports/
+
+Visualisations graphiques
+
+Fichier CSV des recommandations d'optimisation
+"""
 # main.jl - Point d'entrée principal du projet
 using DataFrames, CSV, Dates, Statistics, Plots, Printf
 
