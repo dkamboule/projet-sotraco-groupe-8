@@ -1,0 +1,51 @@
+id,nom_arret,quartier,zone,latitude,longitude,abribus,eclairage,lignes_desservies
+1,Gare Routière,Centre-Ville,Zone 1,12.3686,-1.5275,Oui,Oui,"1,10"
+2,Place de la Nation,Centre-Ville,Zone 1,12.3658,-1.5342,Oui,Oui,"8,11"
+3,Avenue Kwame Nkrumah,Centre-Ville,Zone 1,12.3622,-1.5298,Oui,Oui,"9,3"
+4,Marché Central,Centre-Ville,Zone 1,12.3705,-1.5267,Non,Oui,"4,15"
+5,Place de la Révolution,Centre-Ville,Zone 1,12.3680,-1.5310,Oui,Oui,14
+6,Patte d'Oie,Patte d'Oie,Zone 2,12.3598,-1.5185,Oui,Oui,"2,7"
+7,Rond-Point des Nations-Unies,Zone du Bois,Zone 2,12.3542,-1.5156,Oui,Oui,5
+8,Avenue Yennenga,Koulouba,Zone 3,12.3725,-1.5089,Non,Oui,13
+9,Rond-Point du 8 Mars,Zanguina,Zone 3,12.3456,-1.5234,Oui,Non,12
+10,Marché Sankaryaré,Sankaryaré,Zone 4,12.3789,-1.5445,Non,Non,15
+11,Université de Ouaga I,Université,Zone 5,12.3998,-1.5156,Oui,Oui,2
+12,Kossodo Terminal,Kossodo,Zone 5,12.4125,-1.4986,Oui,Non,1
+13,Gounghin Centre,Gounghin,Zone 4,12.3856,-1.5378,Non,Oui,4
+14,Pissy Marché,Pissy,Zone 4,12.3345,-1.5567,Non,Non,5
+15,Samandin Carrefour,Samandin,Zone 5,12.4234,-1.4789,Non,Non,6
+16,Tanghin École,Tanghin,Zone 3,12.3567,-1.4978,Non,Oui,7
+17,Zogona Mosquée,Zogona,Zone 2,12.3689,-1.5456,Non,Oui,8
+18,Boulmiougou Lycée,Boulmiougou,Zone 4,12.3234,-1.5689,Non,Non,9
+19,Dassasgo Dispensaire,Dassasgo,Zone 2,12.3798,-1.5234,Non,Oui,10
+20,Sig-Noghin Marché,Sig-Noghin,Zone 3,12.3456,-1.4987,Non,Non,11
+21,Tampouy Centre,Tampouy,Zone 5,12.4567,-1.4656,Non,Non,12
+22,Wemtenga Carrefour,Wemtenga,Zone 2,12.3567,-1.5234,Non,Oui,13
+23,Cissin Terminal,Cissin,Zone 5,12.4678,-1.4534,Non,Non,14
+24,Bendogo Village,Bendogo,Zone 4,12.3234,-1.5678,Non,Non,15
+25,Somgandé Carrefour,Somgandé,Zone 2,12.3567,-1.5123,Oui,Oui,"1,3"
+26,Wayalghin École,Wayalghin,Zone 3,12.3789,-1.4998,Non,Non,"2,7"
+27,Nioko II Marché,Nioko II,Zone 4,12.3234,-1.5567,Non,Oui,"4,9"
+28,Rimkièta Dispensaire,Rimkièta,Zone 5,12.4123,-1.4787,Non,Non,"6,12"
+29,Yamtenga Mosquée,Yamtenga,Zone 3,12.3456,-1.5012,Non,Oui,"8,13"
+30,Balkuy Centre,Balkuy,Zone 4,12.3678,-1.5445,Non,Non,"10,15"
+31,Kilwin Carrefour,Kilwin,Zone 2,12.3567,-1.5234,Oui,Non,"3,11"
+32,Nongremassom École,Nongremassom,Zone 3,12.3789,-1.4867,Non,Oui,"5,14"
+33,Secteur 30 Marché,Secteur 30,Zone 1,12.3645,-1.5289,Non,Oui,"1,8"
+34,Secteur 15 Dispensaire,Secteur 15,Zone 2,12.3567,-1.5156,Non,Non,"2,9"
+35,Secteur 7 École,Secteur 7,Zone 1,12.3712,-1.5234,Oui,Oui,"4,6"
+36,Secteur 25 Carrefour,Secteur 25,Zone 3,12.3456,-1.4987,Non,Oui,"7,12"
+37,Secteur 20 Mosquée,Secteur 20,Zone 2,12.3689,-1.5123,Non,Non,"10,13"
+38,Secteur 12 Lycée,Secteur 12,Zone 1,12.3734,-1.5267,Oui,Oui,"3,14"
+39,Secteur 4 Marché,Secteur 4,Zone 1,12.3678,-1.5345,Non,Oui,"5,11"
+40,Secteur 28 Centre,Secteur 28,Zone 4,12.3234,-1.5678,Non,Non,"9,15"
+41,Ouaga 2000 Carrefour,Ouaga 2000,Zone 5,12.4234,-1.4567,Oui,Oui,"6,8"
+42,Zone Industrielle,Zone Industrielle,Zone 4,12.3456,-1.5567,Non,Oui,"1,12"
+43,Cité AN II,Cité AN II,Zone 3,12.3567,-1.5012,Non,Non,"2,13"
+44,Cité AN III,Cité AN III,Zone 3,12.3589,-1.4998,Non,Oui,"7,14"
+45,Cité AN V,Cité AN V,Zone 2,12.3612,-1.5156,Non,Non,"9,15"
+46,Cité Azimo,Cité Azimo,Zone 4,12.3234,-1.5445,Non,Non,"3,10"
+47,Cité SONATUR,Cité SONATUR,Zone 2,12.3567,-1.5234,Oui,Non,"4,11"
+48,Barrage de Boulmiougou,Boulmiougou,Zone 4,12.3123,-1.5789,Non,Non,"5,9"
+49,CHU-YO,Bogodogo,Zone 3,12.3789,-1.4867,Oui,Oui,"6,13"
+50,CNSS Carrefour,Zone du Bois,Zone 2,12.3567,-1.5123,Oui,Oui,"8,14"

@@ -1,0 +1,16 @@
+id,nom_ligne,origine,destination,distance_km,duree_trajet_min,tarif_fcfa,frequence_min,statut
+1,Ligne 1 - Centre-Ville,Gare Routière,Kossodo,18,45,150,20,Actif
+2,Ligne 2 - Université,Patte d'Oie,Université de Ouaga I,22,50,175,15,Actif
+3,Ligne 3 - Aéroport,Centre-Ville,Aéroport Thomas Sankara,15,35,200,30,Actif
+4,Ligne 4 - Gounghin,Marché Central,Gounghin,12,30,125,25,Actif
+5,Ligne 5 - Pissy,Rond-Point des Nations-Unies,Pissy,20,40,150,20,Actif
+6,Ligne 6 - Samandin,Gare SOTRACO,Samandin,25,60,200,35,Actif
+7,Ligne 7 - Tanghin,Patte d'Oie,Tanghin,16,38,150,30,Actif
+8,Ligne 8 - Zogona,Place de la Nation,Zogona,14,32,125,25,Actif
+9,Ligne 9 - Boulmiougou,Avenue Kwame Nkrumah,Boulmiougou,19,42,175,20,Actif
+10,Ligne 10 - Dassasgo,Gare Routière,Dassasgo,13,28,125,40,Actif
+11,Ligne 11 - Sig-Noghin,Centre-Ville,Sig-Noghin,17,38,150,30,Actif
+12,Ligne 12 - Tampouy,Rond-Point du 8 Mars,Tampouy,21,48,175,25,Actif
+13,Ligne 13 - Wemtenga,Avenue Yennenga,Wemtenga,16,35,150,35,Actif
+14,Ligne 14 - Cissin,Place de la Révolution,Cissin,23,55,200,40,Actif
+15,Ligne 15 - Bendogo,Marché Sankaryaré,Bendogo,18,40,150,30,Actif
