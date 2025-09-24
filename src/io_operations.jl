@@ -1,3 +1,110 @@
+"""
+Documentation du module IOOperations.jl
+Vue d'ensemble
+Le module IOOperations fournit des fonctions utilitaires pour les opérations d'entrée/sortie liées à la gestion des données de transport en commun. 
+permet de charger différents types de données (lignes de bus, arrêts, fréquentation) et de sauvegarder les recommandations générées par le système.
+
+Fonctions exportées
+charger_lignes_bus(chemin_fichier::String)
+Charge les données des lignes de bus à partir d'un fichier CSV.
+
+Paramètres:
+
+chemin_fichier (String) : Chemin vers le fichier CSV contenant les données des lignes de bus
+
+Retourne:
+
+DataFrame : DataFrame contenant les données des lignes de bus
+
+Lève une exception:
+
+Si le fichier n'est pas trouvé
+
+charger_arrets(chemin_fichier::String)
+Charge les données des arrêts de bus à partir d'un fichier CSV.
+
+Paramètres:
+
+chemin_fichier (String) : Chemin vers le fichier CSV contenant les données des arrêts
+
+Retourne:
+
+DataFrame : DataFrame contenant les données des arrêts
+
+Lève une exception:
+
+Si le fichier n'est pas trouvé
+
+charger_frequentation(chemin_fichier::String)
+Charge les données de fréquentation des bus avec conversions automatiques des types de données.
+
+Fonctionnalités spéciales:
+
+Convertit automatiquement les dates au format Date
+
+Convertit les heures en format numérique (heures entières)
+
+Gère différents formats d'heure (Time, String)
+
+Paramètres:
+
+chemin_fichier (String) : Chemin vers le fichier CSV contenant les données de fréquentation
+
+Retourne:
+
+DataFrame : DataFrame contenant les données de fréquentation avec types appropriés
+
+Lève une exception:
+
+Si le fichier n'est pas trouvé
+
+sauvegarder_recommandations(recommandations, chemin_fichier::String)
+Sauvegarde les recommandations générées dans un fichier CSV.
+
+Paramètres:
+
+recommandations : Collection d'objets recommandation (doit avoir les propriétés: ligne_id, nom_ligne, frequence_actuelle, frequence_recommandee, taux_occupation_moyen, gain_efficacite, raison)
+
+chemin_fichier (String) : Chemin où sauvegarder le fichier CSV
+
+Effets:
+
+Crée un fichier CSV avec les recommandations
+
+Affiche un message de confirmation
+
+Dépendances
+Le module utilise les packages suivants:
+
+DataFrames : Pour la manipulation des données tabulaires
+
+CSV : Pour la lecture/écriture des fichiers CSV
+
+Dates : Pour la manipulation des dates et heures
+
+Statistics : Pour les opérations statistiques
+
+Gestion d'erreurs
+Vérification systématique de l'existence des fichiers avant lecture
+
+Gestion robuste des conversions de types avec messages d'avertissement
+
+Messages d'erreur explicites en cas de problème
+
+Exemple d'utilisation
+julia
+using .IOOperations
+
+# Chargement des données
+lignes = charger_lignes_bus("data/lignes.csv")
+arrets = charger_arrets("data/arrets.csv")
+frequentation = charger_frequentation("data/frequentation.csv")
+
+# Sauvegarde des recommandations
+sauvegarder_recommandations(recommandations, "output/recommandations.csv")
+
+"""
+
 # io_operations.jl - Opérations d'entrée/sortie
 module IOOperations
 using DataFrames, CSV, Dates, Statistics
