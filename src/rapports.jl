@@ -1,3 +1,140 @@
+"""
+Documentation du Module Rapports.jl
+Vue d'ensemble
+Le module Rapports fournit des fonctionnalités de génération de rapports d'optimisation pour le réseau de transport SOTRACO. 
+Il permet de créer des rapports complets et détaillés par ligne.
+
+Fonctions exportées
+generer_rapport_complet
+julia
+generer_rapport_complet(df_lignes::DataFrame, df_arrets::DataFrame, df_frequentation::DataFrame, recommendations)
+Description: Génère un rapport complet d'optimisation du réseau SOTRACO.
+
+Paramètres:
+
+df_lignes: DataFrame contenant les informations sur les lignes de bus
+
+df_arrets: DataFrame contenant les informations sur les arrêts de bus
+
+df_frequentation: DataFrame contenant les données de fréquentation
+
+recommendations: Collection de recommandations d'optimisation
+
+Sortie:
+
+Crée un fichier texte dans le dossier rapports/ avec le format rapport_sotraco_AAAA-MM-JJ.txt
+
+Retourne le nom du fichier généré
+
+Sections du rapport:
+
+Statistiques générales: Nombre de lignes, arrêts, enregistrements et période couverte
+
+Recommandations d'optimisation: Détails par ligne avec fréquences actuelles/recommandées
+
+Impact estimé: Impact global des modifications proposées
+
+generer_rapport_ligne
+julia
+generer_rapport_ligne(df_frequentation::DataFrame, df_lignes::DataFrame, ligne_id::Int)
+Description: Génère un rapport détaillé pour une ligne spécifique.
+
+Paramètres:
+
+df_frequentation: DataFrame des données de fréquentation
+
+df_lignes: DataFrame des informations sur les lignes
+
+ligne_id: Identifiant numérique de la ligne à analyser
+
+Retourne:
+
+Une chaîne de caractères contenant le rapport détaillé de la ligne
+
+Message d'erreur si aucune donnée n'est disponible
+
+Contenu du rapport:
+
+Informations générales sur la ligne (origine, destination, distance, durée)
+
+Statistiques de fréquentation (taux d'occupation, montées/descentes totales)
+
+Structure des données attendues
+DataFrame df_lignes:
+id: Identifiant de la ligne (Int)
+
+nom_ligne: Nom de la ligne (String)
+
+origine: Point de départ (String)
+
+destination: Point d'arrivée (String)
+
+distance_km: Distance en km (Float)
+
+duree_trajet_min: Durée du trajet en minutes (Int)
+
+frequence_min: Fréquence actuelle en minutes (Int)
+
+DataFrame df_frequentation:
+ligne_id: Identifiant de la ligne (Int)
+
+date: Date de l'enregistrement (Date)
+
+occupation_bus: Nombre de passagers à bord (Int)
+
+capacite_bus: Capacité maximale du bus (Int)
+
+montees: Nombre de montées (Int)
+
+descentes: Nombre de descentes (Int)
+
+Structure des recommandations:
+Chaque recommandation doit contenir:
+
+nom_ligne: Nom de la ligne (String)
+
+frequence_actuelle: Fréquence actuelle en minutes (Int)
+
+frequence_recommandee: Fréquence recommandée en minutes (Int)
+
+taux_occupation_moyen: Taux d'occupation moyen (Float)
+
+raison: Justification de la recommandation (String)
+
+Exemple d'utilisation
+julia
+using DataFrames, Dates
+using .Rapports
+
+# Chargement des données
+df_lignes = DataFrame(...)
+df_arrets = DataFrame(...)
+df_frequentation = DataFrame(...)
+
+# Génération des recommandations
+recommendations = generer_recommandations(df_lignes, df_frequentation)
+
+# Génération du rapport complet
+generer_rapport_complet(df_lignes, df_arrets, df_frequentation, recommendations)
+
+# Rapport détaillé pour une ligne spécifique
+rapport_ligne = generer_rapport_ligne(df_frequentation, df_lignes, 1)
+println(rapport_ligne)
+Dépendances
+DataFrames: Manipulation des données tabulaires
+
+Dates: Gestion des dates et horaires
+
+Printf: Formatage des nombres et chaînes de caractères
+
+Gestion des erreurs
+Vérification de l'existence du dossier rapports/
+
+Contrôle de la présence de données pour chaque ligne analysée
+
+Gestion des divisions par zéro dans les calculs statistiques
+
+"""
 # rapports.jl - Génération de rapports
 module Rapports
 using DataFrames, Dates, Printf
