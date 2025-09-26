@@ -1,29 +1,4 @@
-
-"""
-Documentation du fichier runtests.jl
-Vue d'ensemble
-Le fichier runtests.jl contient l'ensemble des tests unitaires pour valider la fonctionnalité et la cohérence des modules du projet SOTRACO. Il sert de garde-fou pour s'assurer que les modifications de code n'introduisent pas de régressions.
-
-But
-Ce fichier a deux objectifs principaux :
-1.  *Vérifier le bon fonctionnement des structures et des fonctions* : Il utilise le module @testset de Julia pour organiser les tests et s'assurer que chaque partie du code se comporte comme prévu.
-2.  *Faciliter la collaboration* : Il permet à chaque membre de l'équipe de lancer rapidement tous les tests pour s'assurer que son code n'a rien cassé et qu'il peut être fusionné en toute sécurité.
-
-Composants des tests
-* *Tests des Types* : Vérifie la création et l'initialisation des structures de données (LigneBus, Arret, etc.).
-* *Tests des Fonctions d'Optimisation* : S'assure que les fonctions d'optimisation (calcul du temps d'attente, impact, etc.) renvoient des résultats corrects.
-* *Tests des Fonctions d'Analyse* : Valide le bon fonctionnement des fonctions d'analyse de fréquentation et d'identification des lignes critiques.
-* *Tests des Fonctions d'IO* : Vérifie que les fonctions de chargement et de sauvegarde des données sont bien définies.
-
-Utilisation
-Pour lancer les tests, ouvrez un terminal dans le dossier racine du projet et exécutez la commande suivante :
-```julia
-julia --project=. runtests.jl
-ou bien avec votre terminale  vous vous placez sur le dossier test et tapez :  
-julia runtests.jl
-"""
-
-# runtests.jl 
+# runtests.jl - Version CORRECTE pour votre projet
 
 using Test
 using Dates
@@ -31,7 +6,7 @@ using DataFrames
 
 println("=== LANCEMENT DES TESTS SOTRACO ===")
 
-# Chargement des fichiers source
+# Charge les fichiers source
 println("1. Chargement des modules...")
 
 include("../src/types.jl")
@@ -57,7 +32,7 @@ println("2. Modules chargés avec succès")
         println("   ✓ Création DonneesFrequentation OK")
         
         # Test création LigneBus - CORRECT: 9 arguments comme défini dans votre code
-        ligne = TypesSotraco.LigneBus(1, "Ligne Test", "Départ", "Arrivée", 10.5, 30, 200, 15, "ACTIVE")
+        ligne = TypesSotraco.LigneBus(1, "Ligne Test", "Départ", "Arrivée", 10.5, 30, 200, 15, "ACTIVE", 50)
         @test ligne.id == 1
         @test ligne.nom_ligne == "Ligne Test"
         println("   ✓ Création LigneBus OK")
@@ -91,7 +66,7 @@ println("2. Modules chargés avec succès")
              taux_occupation_moyen=0.5, gain_efficacite=0.0, raison="Test")
         ]
         
-        # Création d'un DataFrame simulé pour le test
+        # Créer un DataFrame simulé pour le test
         df_lignes_test = DataFrame(
             id = [1, 2],
             nom_ligne = ["Test1", "Test2"],
@@ -188,5 +163,5 @@ println("2. Modules chargés avec succès")
 end
 
 println("="^50)
-println("TOUS LES TESTS ONT RÉUSSI!")
+println("🎉 TOUS LES TESTS ONT RÉUSSI!")
 println("="^50)

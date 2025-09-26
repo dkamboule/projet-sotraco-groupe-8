@@ -254,7 +254,7 @@ function plot_frequentation_horaire(df_frequentation::DataFrame)
     
     sort!(frequentation_par_heure, :heure)
     
-    p = plot(size=(1200, 800), dpi=150, legend=:topright)
+    p = plot(size=(1500, 800), dpi=150, legend=:topright)
     
     # Aire sous la courbe pour les montées (très visible)
     plot!(frequentation_par_heure.heure, frequentation_par_heure.montees_total,
@@ -288,47 +288,41 @@ function plot_frequentation_horaire(df_frequentation::DataFrame)
     return p
 end
 
+# Si vous avez juste des problèmes de lisibilité des noms
 function plot_recommandations(recommendations)
     noms_lignes = [r.nom_ligne for r in recommendations]
     freq_actuelles = [r.frequence_actuelle for r in recommendations]
     freq_recommandees = [r.frequence_recommandee for r in recommendations]
     
-    # Calcul du nombre de lignes pour ajuster la hauteur
+    # Calcul des écarts pour colorer les barres
+    ecarts = freq_recommandees - freq_actuelles
+    
     n_lignes = length(noms_lignes)
-    hauteur = max(600, n_lignes * 40)  # Hauteur adaptative
+    hauteur = max(600, n_lignes * 40)
     
-    p = plot(size=(1400, hauteur), dpi=150)
+    p = plot(size=(1500, 800), dpi=150, legend=:topright)
     
-    # Positionnement manuel pour éviter les chevauchements
-    bar_plot = groupedbar([freq_actuelles freq_recommandees],
-                         group=noms_lignes,
+    # Création du graphique avec valeurs sur les barres
+   group_bar =groupedbar(noms_lignes, [freq_actuelles freq_recommandees],
                          label=["Fréquence actuelle" "Fréquence recommandée"],
                          title="Recommandations d'optimisation des fréquences",
-                         xlabel="Lignes de bus",
                          ylabel="Fréquence (minutes)",
-                         legend=:outertopright,  # Légende à l'extérieur
-                         xtickfontsize=9,
-                         ytickfontsize=10,
-                         xguidefontsize=12,
-                         yguidefontsize=12,
-                         titlefontsize=16,
-                         legendfontsize=6,
-                         grid=true,
-                         framestyle=:box)
+                         legend=:outertopright,
+                         bar_width=1,
+                         xrot=45,
+                         size=(1000, hauteur),
+                         dpi=150)
     
-    # Rotation des labels x si nécessaire
-    if any(length.(noms_lignes) .> 15)
-        bar_plot = groupedbar([freq_actuelles freq_recommandees],
-                             group=noms_lignes,
-                             label=["Actuelle" "Recommandée"],  # Labels courts
-                             title="Recommandations d'optimisation des fréquences",
-                             xlabel="Lignes de bus",
-                            ylabel="Fréquence (minutes)",
-                             legend=:topright,
-                             xrotation=45,
-                             size=(1200, 800))
+    # Ajouter les valeurs sur les barres
+    for (i, nom) in enumerate(noms_lignes)
+        # Valeur actuelle
+        #annotate!(i-0.2, freq_actuelles[i] + 0.5, text("$(freq_actuelles[i])", 8))
+        # Valeur recommandée
+        annotate!(i+0.2, freq_recommandees[i], text("$(freq_recommandees[i])", 8))
+        
+       
     end
     
-    return bar_plot
+    return group_bar
 end
 end # module

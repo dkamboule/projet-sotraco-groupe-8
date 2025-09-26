@@ -1,0 +1,107 @@
+=== RAPPORT D'OPTIMISATION SOTRACO ===
+Date: 2025-09-26
+
+STATISTIQUES GÉNÉRALES
+=====================
+Nombre total de lignes: 15
+Nombre total d'arrêts: 50
+Enregistrements de fréquentation: 2090
+Période couverte: 2024-01-01 à 2024-01-07
+
+RECOMMANDATIONS D'OPTIMISATION
+=============================
+Ligne Ligne 1 - Centre-Ville:
+  - Fréquence actuelle: 20 min
+  - Fréquence recommandée: 20 min
+  - Taux d'occupation: 49.7%
+  - Raison: Optimal (occupation: 49.7%)
+
+Ligne Ligne 2 - Université:
+  - Fréquence actuelle: 15 min
+  - Fréquence recommandée: 15 min
+  - Taux d'occupation: 52.6%
+  - Raison: Optimal (occupation: 52.6%)
+
+Ligne Ligne 3 - Aéroport:
+  - Fréquence actuelle: 30 min
+  - Fréquence recommandée: 30 min
+  - Taux d'occupation: 48.2%
+  - Raison: Optimal (occupation: 48.2%)
+
+Ligne Ligne 4 - Gounghin:
+  - Fréquence actuelle: 25 min
+  - Fréquence recommandée: 25 min
+  - Taux d'occupation: 56.7%
+  - Raison: Optimal (occupation: 56.7%)
+
+Ligne Ligne 5 - Pissy:
+  - Fréquence actuelle: 20 min
+  - Fréquence recommandée: 20 min
+  - Taux d'occupation: 56.8%
+  - Raison: Optimal (occupation: 56.8%)
+
+Ligne Ligne 6 - Samandin:
+  - Fréquence actuelle: 35 min
+  - Fréquence recommandée: 35 min
+  - Taux d'occupation: 45.9%
+  - Raison: Optimal (occupation: 45.9%)
+
+Ligne Ligne 7 - Tanghin:
+  - Fréquence actuelle: 30 min
+  - Fréquence recommandée: 30 min
+  - Taux d'occupation: 58.0%
+  - Raison: Optimal (occupation: 58.0%)
+
+Ligne Ligne 8 - Zogona:
+  - Fréquence actuelle: 25 min
+  - Fréquence recommandée: 25 min
+  - Taux d'occupation: 57.6%
+  - Raison: Optimal (occupation: 57.6%)
+
+Ligne Ligne 9 - Boulmiougou:
+  - Fréquence actuelle: 20 min
+  - Fréquence recommandée: 20 min
+  - Taux d'occupation: 52.3%
+  - Raison: Optimal (occupation: 52.3%)
+
+Ligne Ligne 10 - Dassasgo:
+  - Fréquence actuelle: 40 min
+  - Fréquence recommandée: 40 min
+  - Taux d'occupation: 55.6%
+  - Raison: Optimal (occupation: 55.6%)
+
+Ligne Ligne 11 - Sig-Noghin:
+  - Fréquence actuelle: 30 min
+  - Fréquence recommandée: 30 min
+  - Taux d'occupation: 55.2%
+  - Raison: Optimal (occupation: 55.2%)
+
+Ligne Ligne 12 - Tampouy:
+  - Fréquence actuelle: 25 min
+  - Fréquence recommandée: 25 min
+  - Taux d'occupation: 56.0%
+  - Raison: Optimal (occupation: 56.0%)
+
+Ligne Ligne 13 - Wemtenga:
+  - Fréquence actuelle: 35 min
+  - Fréquence recommandée: 35 min
+  - Taux d'occupation: 59.2%
+  - Raison: Optimal (occupation: 59.2%)
+
+Ligne Ligne 14 - Cissin:
+  - Fréquence actuelle: 40 min
+  - Fréquence recommandée: 40 min
+  - Taux d'occupation: 57.5%
+  - Raison: Optimal (occupation: 57.5%)
+
+Ligne Ligne 15 - Bendogo:
+  - Fréquence actuelle: 30 min
+  - Fréquence recommandée: 30 min
+  - Taux d'occupation: 56.1%
+  - Raison: Optimal (occupation: 56.1%)
+
+IMPACT ESTIMÉ DES MODIFICATIONS
+===============================
+Lignes modifiées: 0 sur 15
+Réduction moyenne du temps d'attente: NaN minutes
+Impact total sur le réseau: 0.0 minutes

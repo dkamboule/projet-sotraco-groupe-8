@@ -1,0 +1,2 @@
+ligne_id,nom_ligne,frequence_actuelle,frequence_recommandee,taux_occupation_moyen,gain_efficacite,raison
+1,Test1,10,5,0.8,0.5,Surcharge
